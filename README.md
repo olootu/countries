@@ -20,3 +20,4 @@ Steps to run the application
 ## Technical
 > 1. CSS - Sass
 > 2. NGRX - for State Management
+> 3. FOLDER - I followed the Angular recommended folder structure for lazy loading and feature module
