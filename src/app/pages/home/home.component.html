@@ -1,0 +1,43 @@
+<div class="mt-4">
+   <h4>Countries & Regions</h4>
+</div>
+<hr class="mb-4">
+<section class="mb-4">
+   <label>Region</label>
+   <select class="form-control" (change)="onChange($event.target.value)">
+      <option value="null"> Select a region</option>
+      <option *ngFor="let reg of regionOption" [ngValue]="reg.value"> {{reg.name}}</option>
+    </select>
+</section>
+
+<section class="mb-4" *ngIf="showAsia">
+  
+   <app-region-list (optionChange)="onOptionChange($event)" [list]="asiaCountries$ | async"></app-region-list>
+</section>
+
+<section class="mb-4" *ngIf="showEurope">
+   <app-region-list (optionChange)="onOptionChange($event)" [list]="euroCountries$ | async"></app-region-list>
+</section>
+
+<section *ngIf="singleCountry.length"> 
+   <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Capital</th>
+          <th scope="col">Population</th>
+          <th scope="col">Currency</th>
+          <th scope="col">Flag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tbl of singleCountry">
+          <td>{{tbl.name}}</td>
+          <td>{{tbl.capital}}</td>
+          <td>{{tbl.population}}</td>
+          <td >{{tbl.currencies[0].name}}</td>
+          <td><img class="flag" [src]="tbl.flag"></td>
+        </tr>
+      </tbody>
+    </table>
+</section>
