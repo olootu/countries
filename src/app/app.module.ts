@@ -24,6 +24,7 @@ import { EffectsModule } from '@ngrx/effects';
     EffectsModule.forRoot([])
   ],
   providers: [],
+  exports: [SharedModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

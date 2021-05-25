@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { RegionListComponent } from './region-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('RegionListComponent', () => {
   let component: RegionListComponent;
@@ -11,7 +12,10 @@ describe('RegionListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegionListComponent ]
+      declarations: [ RegionListComponent ],
+      imports: [
+        ReactiveFormsModule
+      ]
     })
     .compileComponents();
   }));

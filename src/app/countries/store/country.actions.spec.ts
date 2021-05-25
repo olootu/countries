@@ -1,7 +1,12 @@
-import * as fromProduct from './country.actions';
+import * as fromCountry from './country.actions';
 
-describe('loadProducts', () => {
+describe('loadCountries', () => {
+  const list: any = null;
   it('should return an action', () => {
-    // expect(fromProduct.loadProducts().type).toBe('[Product] Load Products');
+    expect(fromCountry.retrievedCountryList(list).type).toBe('[Country List/API] Retrieve Country Success');
+  });
+
+  it('should return region action', () => {
+    expect(fromCountry.retrievedRegionList(list).type).toBe('[Region List/API] Retrieve Region Success');
   });
 });
